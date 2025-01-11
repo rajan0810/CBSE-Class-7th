@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 68a3ccce81fe42141b17dd3e352c7f50
+timeCreated: 1496530036
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92175
+  packageName: Animated Planet Bagyo
+  packageVersion: 1.0
+  assetPath: Assets/Animated Planet Bagyo/Materials/Left.mat
+  uploadId: 183408
