@@ -8,6 +8,7 @@ public class Activity1 : MonoBehaviour
     public bool piece3 = false;
     public bool piece4 = false;
     public bool piece5 = false;
+    public GameObject Blinker;
 
     // A flag to ensure the event only triggers once
     private bool isPuzzleCompleted = false;
@@ -38,7 +39,9 @@ public class Activity1 : MonoBehaviour
         Debug.Log("Puzzle completed! Triggering the next activity...");
         //Task : Raghav 
         //blink the symstry line for 10 sec
+        Blinker.SetActive(true);
     }
+
 
     // Function to update the puzzle piece status based on child objects
     private void UpdatePuzzlePieceStatus()
