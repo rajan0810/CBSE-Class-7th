@@ -36,6 +36,8 @@ public class Activity1 : MonoBehaviour
     private void OnPuzzleCompleted()
     {
         Debug.Log("Puzzle completed! Triggering the next activity...");
+        //Task : Raghav 
+        //blink the symstry line for 10 sec
     }
 
     // Function to update the puzzle piece status based on child objects
