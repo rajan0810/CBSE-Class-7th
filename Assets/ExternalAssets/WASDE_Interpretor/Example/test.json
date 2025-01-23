@@ -1,0 +1,158 @@
+{
+  "variables": {},
+  "chars": [
+    {
+      "id": 0,
+      "Name": "No Character"
+    },
+    {
+      "id": 1,
+      "Name": "char 1"
+    },
+    {
+      "id": 2,
+      "Name": "char 2"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": 0,
+      "title": "Entry",
+      "line": "Hello char 2",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "next>",
+          "id": 1
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 1,
+      "title": "hello",
+      "line": "Hey char 1",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "next>",
+          "id": 2
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 2
+    },
+    {
+      "id": 2,
+      "title": "choice1",
+      "line": "How are you?",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "good",
+          "id": 3
+        },
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "bad",
+          "id": 4
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 3,
+      "title": "good",
+      "line": "im good",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "next>",
+          "id": 5
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 2
+    },
+    {
+      "id": 4,
+      "title": "bad",
+      "line": "im bad",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "next>",
+          "id": 6
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 2
+    },
+    {
+      "id": 5,
+      "title": "good end",
+      "line": "ok bro",
+      "options": [],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 6,
+      "title": "bad end",
+      "line": "lel who asked",
+      "options": [],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        2
+      ],
+      "charCurrentlySpeaking": 0
+    }
+  ]
+}
