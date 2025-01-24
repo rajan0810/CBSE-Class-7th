@@ -1,12 +1,15 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using System.IO;
 [System.Serializable]
 public class DialogueCallback : UnityEvent<string, int> { }
 public class DialogueTreeInterpreter : MonoBehaviour
 {
     public static DialogueTree currentlyPlaying;
     public static int nowOn;
+    public static string curFileName;
     public static DialogueUIManager dum;
     public static DialogueCallback DialogueTreeStarted = new DialogueCallback();
     public static DialogueCallback NewDialogueStarted = new DialogueCallback();
@@ -17,6 +20,7 @@ public class DialogueTreeInterpreter : MonoBehaviour
     }
     public static void StartDialogue(TextAsset t) {
         currentlyPlaying = JsonConvert.DeserializeObject<DialogueTree>(t.text);
+        curFileName = t.name;
         nowOn = 0;
         moveTo(0);
     }
@@ -51,6 +55,15 @@ public class DialogueTreeInterpreter : MonoBehaviour
                 DialogueTreeStarted.Invoke(d.title,d.id);
             }
             NewDialogueStarted.Invoke(d.title, d.id);
+            string audioPath = Path.Combine(SceneManager.GetActiveScene().name, curFileName, (d.title + ".wav"));
+            //print(audioPath);
+            if (Resources.Load(audioPath) != null)
+            {
+                //Play Audio
+            }
+            else {
+                Debug.LogWarning("Dialogue Flow tried to play audio at Assets\\Resources" + audioPath + " which does not exist. Defaulting to no Audio.");
+            }
             dum.UpdateDisplay(d);
             nowOn = id;
             return d;

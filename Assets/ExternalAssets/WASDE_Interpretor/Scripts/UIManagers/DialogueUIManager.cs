@@ -27,14 +27,17 @@ public class DialogueUIManager : MonoBehaviour
     {
         panel.SetActive(false);
     }
-    public void UpdateDisplay(DialogueData dd)
+    public void UpdateDisplay(DialogueData dd, float audTime = -1)
     {
         if (!panel.activeInHierarchy)
         {
             panel.SetActive(true);
         }
         destroySelf.Invoke();
-        captionSource.ShowTimedCaption(DialogueTreeInterpreter.currentlyPlaying.chars[dd.charIDs[dd.charCurrentlySpeaking]].Name+": "+dd.line, dd.line.Split(" ").Length*wordTime);
+        if (audTime <= 0) {
+            audTime = dd.line.Split(" ").Length * wordTime;
+        }
+        captionSource.ShowTimedCaption(DialogueTreeInterpreter.currentlyPlaying.chars[dd.charIDs[dd.charCurrentlySpeaking]].Name+": "+dd.line, audTime);
         if (dd.options.Length == 0)
         {
             GameObject g = Instantiate(optionObject, optionParent);
