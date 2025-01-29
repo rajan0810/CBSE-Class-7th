@@ -1,0 +1,2 @@
+/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt

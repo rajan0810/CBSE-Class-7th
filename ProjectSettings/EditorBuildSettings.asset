@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SceneList/Science/Chapter1/TheLifeInSpace1.unity
     guid: 97cf96399cc734932b527f73646b770b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/3.0.7/Hands Interaction Demo/HandsDemoScene.unity
     guid: 3ff35cecbcc52cc42945cf531638a60a
   - enabled: 0
     path: Assets/SceneList/Testing Scene/BlueScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
+  - enabled: 1
+    path: Assets/SceneList/Maths/Chapter12/ShipOfSymmatry.unity
+    guid: 9a01a966640244ff898319a5c817d59e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
