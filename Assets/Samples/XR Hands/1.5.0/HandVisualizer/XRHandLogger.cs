@@ -2,14 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Hands;
 using UnityEngine.UI;
+using System.IO; // Required for file handling
 
-public class XRLeftHandMapper : MonoBehaviour
+public class XRHandMapper : MonoBehaviour
 {
     private XRHandSubsystem handSubsystem;
     public Text logText; // Assign a UI Text element in the Inspector
     public GameObject leftHand; // Assign the left-hand model in the Inspector
 
     private List<Transform> l_handTransforms = new List<Transform>(); // Store all hand joints
+    private string filePath; // File path for logging data
 
     void Start()
     {
@@ -39,6 +41,9 @@ public class XRLeftHandMapper : MonoBehaviour
             Debug.LogError("No active XRHandSubsystem found!");
             UpdateUIText("No active XRHandSubsystem found!");
         }
+
+        // Define file path to store the logs
+        filePath = Application.persistentDataPath + "/LeftHandJointLog.txt";
     }
 
     // Recursively collect all children into l_handTransforms list
@@ -86,7 +91,7 @@ public class XRLeftHandMapper : MonoBehaviour
                     jointTransform.localRotation = Quaternion.Inverse(jointTransform.parent.rotation) * pose.rotation;
                     
                     // Convert world-space position to local-space
-                    //jointTransform.localPosition = jointTransform.parent.InverseTransformPoint(pose.position);
+                    jointTransform.localPosition = jointTransform.parent.InverseTransformPoint(pose.position);
                 }
 
                 logMessage += $"Joint {jointID}: Position: {pose.position}, Rotation: {pose.rotation}\n";
@@ -96,6 +101,46 @@ public class XRLeftHandMapper : MonoBehaviour
         }
 
         return logMessage;
+    }
+
+    void Update()
+    {
+        // Log data when Space key is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LogHandDataToFile();
+        }
+    }
+
+    void LogHandDataToFile()
+    {
+        if (handSubsystem == null || !handSubsystem.leftHand.isTracked)
+        {
+            Debug.LogWarning("Left hand is not tracked. Cannot log data.");
+            return;
+        }
+
+        string logData = $"[Time: {System.DateTime.Now}]\n";
+
+        int jointIndex = 0;
+
+        for (var i = XRHandJointID.BeginMarker.ToIndex(); i < XRHandJointID.EndMarker.ToIndex(); i++)
+        {
+            var jointID = XRHandJointIDUtility.FromIndex(i);
+            var joint = handSubsystem.leftHand.GetJoint(jointID);
+
+            if (joint.TryGetPose(out Pose pose) && jointIndex < l_handTransforms.Count)
+            {
+                logData += $"Joint {jointID}:\n Position: {pose.position}\n Rotation: {pose.rotation}\n";
+            }
+
+            jointIndex++;
+        }
+
+        // Write to file
+        File.AppendAllText(filePath, logData + "\n----------------------\n");
+
+        Debug.Log($"Logged Left Hand Data to: {filePath}");
     }
 
     void UpdateUIText(string message)
