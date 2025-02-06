@@ -104,6 +104,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Table
     second: {fileID: 2100000, guid: 8e1fe836e1d6847ab80a907913d61d1d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Scifi Props 1 - Incubator FBX To SP_Cylinder_Emissive
+    second: {fileID: 2800000, guid: 3d787a805299547a5aba30ae497878e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Scifi Props 1 - Incubator FBX To SP_Cylinder_Roughness
+    second: {fileID: 2800000, guid: b6b100b0d92ed473686b6ea3edc5a34c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bpng
+    second: {fileID: 2800000, guid: 39c26d018c9fb437e941ea20e1476329, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bpng_NRM Kopie
+    second: {fileID: 2800000, guid: c605a76f3c0e24e849aa378df04d1c7c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bpng_Schwaz_weistensel
+    second: {fileID: 2800000, guid: b3b226260c105445ab2ae4993ffbd96e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
