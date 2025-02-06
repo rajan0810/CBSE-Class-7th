@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SceneList/Science/Chapter1/TheLifeInSpace0.unity
     guid: 1f6e252f2b1be4c44adba37c3c87ddd8
-  - enabled: 0
+  - enabled: 1
     path: Assets/SceneList/Science/Chapter1/TheLifeInSpace1.unity
     guid: 97cf96399cc734932b527f73646b770b
   - enabled: 0
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SceneList/Maths/Chapter12/ShipOfSymmatry.unity
     guid: 9a01a966640244ff898319a5c817d59e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/XR Hands/1.5.0/HandVisualizer/HandVisualizer.unity
     guid: ab7acf0d9677fbe4db51bc36647d4fcb
   m_configObjects:
