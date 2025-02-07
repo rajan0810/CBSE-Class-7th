@@ -7,16 +7,23 @@ using UnityEngine.InputSystem; // New Input System
 public class XRHandLogger : MonoBehaviour
 {
     private XRHandSubsystem handSubsystem;
-    public GameObject leftHand; // Assign the left-hand model in the Inspector
-    public Text logText; // Assign a UI Text element in the Inspector
+    public GameObject leftHand;  // Assign the left-hand model in the Inspector
+    public GameObject rightHand; // Assign the right-hand model in the Inspector
+    public Text logText;         // Assign a UI Text element in the Inspector
 
-    private Dictionary<XRHandJointID, Transform> handJoints = new Dictionary<XRHandJointID, Transform>(); // Store joints by ID
+    private Dictionary<XRHandJointID, Transform> leftHandJoints = new Dictionary<XRHandJointID, Transform>(); // Store left-hand joints
+    private Dictionary<XRHandJointID, Transform> rightHandJoints = new Dictionary<XRHandJointID, Transform>(); // Store right-hand joints
 
     void Start()
     {
         if (leftHand != null)
         {
-            CollectHandJoints(leftHand.transform);
+            CollectHandJoints(leftHand.transform, leftHandJoints);
+        }
+
+        if (rightHand != null)
+        {
+            CollectHandJoints(rightHand.transform, rightHandJoints);
         }
 
         var handSubsystems = new List<XRHandSubsystem>();
@@ -42,8 +49,8 @@ public class XRHandLogger : MonoBehaviour
         }
     }
 
-    // Recursively collect all joints into handJoints dictionary
-    void CollectHandJoints(Transform parent)
+    // Recursively collect all joints into the appropriate dictionary
+    void CollectHandJoints(Transform parent, Dictionary<XRHandJointID, Transform> handJoints)
     {
         foreach (Transform child in parent)
         {
@@ -56,27 +63,35 @@ public class XRHandLogger : MonoBehaviour
                     break;
                 }
             }
-            CollectHandJoints(child); // Recursively process children
+            CollectHandJoints(child, handJoints); // Recursively process children
         }
     }
 
     void OnUpdatedHands(XRHandSubsystem subsystem, XRHandSubsystem.UpdateSuccessFlags updateSuccessFlags, XRHandSubsystem.UpdateType updateType)
     {
+        string logData = "";
+
         if ((updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.LeftHandRootPose) != 0)
         {
-            string logData = MapLeftHandRotations(handSubsystem.leftHand);
-            UpdateUIText(logData);
+            logData += MapHandRotations(handSubsystem.leftHand, leftHandJoints, "Left Hand");
         }
+
+        if ((updateSuccessFlags & XRHandSubsystem.UpdateSuccessFlags.RightHandRootPose) != 0)
+        {
+            logData += MapHandRotations(handSubsystem.rightHand, rightHandJoints, "Right Hand");
+        }
+
+        UpdateUIText(logData);
     }
 
-    string MapLeftHandRotations(XRHand hand)
+    string MapHandRotations(XRHand hand, Dictionary<XRHandJointID, Transform> handJoints, string handName)
     {
         if (!hand.isTracked)
         {
-            return "Left Hand is not being tracked.\n";
+            return $"{handName} is not being tracked.\n";
         }
 
-        string logMessage = "Left Hand Rotations:\n";
+        string logMessage = $"{handName} Rotations:\n";
 
         foreach (var jointID in handJoints.Keys)
         {
@@ -90,10 +105,13 @@ public class XRHandLogger : MonoBehaviour
                 {
                     // Convert world-space rotation to local-space
                     jointTransform.localRotation = Quaternion.Inverse(jointTransform.parent.rotation) * pose.rotation;
-                }
+                    
+                    // Get final rotation in Euler angles (X, Y, Z)
+                    Vector3 finalRotation = jointTransform.localRotation.eulerAngles;
 
-                // Append rotation info to UI text
-                logMessage += $"{jointID}: {pose.rotation.eulerAngles}\n";
+                    // Append rotation info to UI text
+                    logMessage += $"{jointID}: X:{finalRotation.x:F2}, Y:{finalRotation.y:F2}, Z:{finalRotation.z:F2}\n";
+                }
             }
         }
 
