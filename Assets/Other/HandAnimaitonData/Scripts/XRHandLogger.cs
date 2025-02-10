@@ -2,10 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Hands;
 using UnityEngine.UI;
-using UnityEngine.InputSystem; // New Input System
+using UnityEngine.InputSystem;
+using System.Collections;
+using System.IO; 
 
 public class XRHandLogger : MonoBehaviour
 {
+    public HeadsetWebSocketClient headsetWebSocketClient;
     private XRHandSubsystem handSubsystem;
     public GameObject leftHand;  // Assign the left-hand model in the Inspector
     public GameObject rightHand; // Assign the right-hand model in the Inspector
@@ -91,7 +94,7 @@ public class XRHandLogger : MonoBehaviour
             return $"{handName} is not being tracked.\n";
         }
 
-        string logMessage = $"{handName} Rotations:\n";
+        string logMessage = ""; //= $"{handName} Rotations:\n";
 
         foreach (var jointID in handJoints.Keys)
         {
@@ -109,14 +112,53 @@ public class XRHandLogger : MonoBehaviour
                     // Get final rotation in Euler angles (X, Y, Z)
                     Vector3 finalRotation = jointTransform.localRotation.eulerAngles;
 
+                    if(handName == "Left Hand")
+                    {
+                        logMessage += $"L_{jointID}={finalRotation.x:F2},{finalRotation.y:F2},{finalRotation.z:F2}\n";
+
+                    }
+                    else if(handName == "Right Hand")
+                    {
+                        logMessage += $"R_{jointID}={finalRotation.x:F2},{finalRotation.y:F2},{finalRotation.z:F2}\n";
+                    }
                     // Append rotation info to UI text
-                    logMessage += $"{jointID}: X:{finalRotation.x:F2}, Y:{finalRotation.y:F2}, Z:{finalRotation.z:F2}\n";
+                    
                 }
             }
         }
 
         return logMessage;
     }
+
+
+
+    public string SaveData()
+    {
+        string response;
+    
+        if (logText == null)
+        {
+            response = "UI Text is not assigned! Please assign a Text UI element in the Inspector.";
+            Debug.LogError("UI Text is not assigned! Please assign a Text UI element in the Inspector.");
+
+            return response;
+        }
+
+        string currentText = logText.text; // Get the current UI text
+        string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"); // Generate timestamp
+        string fileName = $"UIText_{timestamp}.txt"; // File name with timestamp
+
+        headsetWebSocketClient.SendData(currentText);
+
+        // Use Application.persistentDataPath (Cross-platform)
+        string path  = "/storage/emulated/0/Documents/hand_pose.txt";
+        // Save text to file
+        File.WriteAllText(path, currentText);
+        response = $"UI text saved to: {path}";
+        return response;
+    }
+
+    
 
     void UpdateUIText(string message)
     {

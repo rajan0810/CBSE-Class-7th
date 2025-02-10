@@ -7,6 +7,7 @@ using UnityEngine.XR.Hands;
 
 public class XRHandPoseSaver : MonoBehaviour
 {
+    public XRHandLogger xRHandLogger;
     private XRHandSubsystem handSubsystem;
 
     [Header("UI Elements")]
@@ -73,18 +74,20 @@ public class XRHandPoseSaver : MonoBehaviour
         // Convert to human-readable text format
         string formattedData = FormatPoseDataAsText(poseData);
 
-        // Save the pose data as a .txt file
-        bool success = SavePoseData(formattedData);
+        // Save the pose data as a .txt file'
+        string data = xRHandLogger.SaveData();
+        DisplaySavedText(data);
+        // bool success = SavePoseData(formattedData);
 
-        if (success)
-        {
-            UpdateCountdownUI(" Pose saved successfully!");
-            DisplaySavedText(formattedData); // Show exactly what was saved
-        }
-        else
-        {
-            UpdateCountdownUI(" Error: Could not save pose!");
-        }
+        // if (success)
+        // {
+        //     UpdateCountdownUI(" Pose saved successfully!");
+        //     DisplaySavedText(formattedData); // Show exactly what was saved
+        // }
+        // else
+        // {
+        //     UpdateCountdownUI(" Error: Could not save pose!");
+        // }
     }
 
     private void UpdateCountdownUI(string message)
