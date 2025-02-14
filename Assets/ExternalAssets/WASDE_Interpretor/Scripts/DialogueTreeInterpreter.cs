@@ -55,10 +55,11 @@ public class DialogueTreeInterpreter : MonoBehaviour
                 DialogueTreeStarted.Invoke(d.title,d.id);
             }
             NewDialogueStarted.Invoke(d.title, d.id);
-            string audioPath = Path.Combine(SceneManager.GetActiveScene().name, curFileName, (d.title + ".wav"));
+            string audioPath = Path.Combine(SceneManager.GetActiveScene().name, curFileName, (d.title));
             //print(audioPath);
-            if (Resources.Load(audioPath) != null)
+            if (Resources.Load<AudioClip>(audioPath) != null)
             {
+                Resources.Load<AudioClip>(audioPath);
                 //Play Audio
             }
             else {
