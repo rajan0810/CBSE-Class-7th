@@ -1,10 +1,10 @@
 # ninja log v5
-2	596	1736939922481487096	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	2d7300deacc6a1e1
-1	624	1736939922509646999	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a9bb8cc04b4251a9
-1	627	1736939922510553620	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8e30c8631cac9a73
-3	643	1736939922530228315	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bf47007c741b3b8c
-3	671	1736939922558554093	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	20fb9cb74cb413c1
-1	729	1736939922615114524	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	fe1d4c24cabc9284
-2	801	1736939922687771918	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d0ef003fb42f594b
-0	900	1736939922786659684	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	cee345dd27f165ab
-900	1003	1736939922886944984	/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n5j3732/obj/arm64-v8a/libgame.so	92e95c86541af99b
+1	529	1738674481482029799	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a9bb8cc04b4251a9
+0	538	1738674481492293950	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8e30c8631cac9a73
+2	538	1738674481491780912	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	2d7300deacc6a1e1
+2	540	1738674481493583027	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bf47007c741b3b8c
+1	594	1738674481547952142	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	fe1d4c24cabc9284
+2	605	1738674481559024414	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	20fb9cb74cb413c1
+1	684	1738674481638941847	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d0ef003fb42f594b
+0	791	1738674481745150342	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	cee345dd27f165ab
+791	886	1738674481837009500	/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n5j3732/obj/arm64-v8a/libgame.so	92e95c86541af99b

@@ -1,0 +1,90 @@
+{
+  "variables": {},
+  "chars": [
+    {
+      "id": 0,
+      "Name": "No Character"
+    },
+    {
+      "id": 1,
+      "Name": "Mr.P"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": 0,
+      "title": "Greetings",
+      "line": "Hey there last night was carzy ! our ship was in rack ! Gettup and make ths ship symmatrical aging ! ",
+      "options": [
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "Ture ",
+          "id": 1
+        },
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "False",
+          "id": 2
+        },
+        {
+          "constCheck": null,
+          "varCheck": null,
+          "title": "Empty Hand ",
+          "id": 3
+        }
+      ],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        0
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 1,
+      "title": "Ture",
+      "line": "You got it right !",
+      "options": [],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        0
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 2,
+      "title": "False",
+      "line": "No this itme does not belong here ! pick somting else !",
+      "options": [],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        0
+      ],
+      "charCurrentlySpeaking": 0
+    },
+    {
+      "id": 3,
+      "title": "Pick Something",
+      "line": "Pick any Highlited object you bafoon !",
+      "options": [],
+      "variableConstantOperations": [],
+      "variableVariableOperations": [],
+      "charIDs": [
+        1,
+        0,
+        0
+      ],
+      "charCurrentlySpeaking": 0
+    }
+  ]
+}
