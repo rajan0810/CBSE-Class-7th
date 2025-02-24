@@ -3,22 +3,22 @@ using UnityEngine;
 public class SpriteSheetSwitcherOnStart : MonoBehaviour
 {
     [Tooltip("Reference to the SpriteSheetSwitcher component (auto-assigned if left empty).")]
-    public SpriteSheetSwitcher spriteSheetSwitcher;
+    public FaceAnimationController faceAnimationController;
 
     private void Start()
     {
-        if (spriteSheetSwitcher == null)
+        if (faceAnimationController == null)
         {
-            spriteSheetSwitcher = GetComponent<SpriteSheetSwitcher>();
+            faceAnimationController = GetComponent<FaceAnimationController>();
         }
         
-        if (spriteSheetSwitcher == null)
+        if (faceAnimationController == null)
         {
             Debug.LogError("SpriteSheetSwitcherOnStart: SpriteSheetSwitcher component not found!");
             return;
         }
         
         // Automatically start the infinite animation.
-        spriteSheetSwitcher.CycleSpriteAnimation();
+        faceAnimationController.PlayIdleAnimation();
     }
 }
