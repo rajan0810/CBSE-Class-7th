@@ -8,6 +8,7 @@ public class HandPoseLoader : MonoBehaviour
     public GameObject rightHandPrefab;
 
     private GameObject leftHandInstance;
+
     private GameObject rightHandInstance;
 
     [TextArea(10, 30)] // Allows multiline input in the Unity Inspector
@@ -23,15 +24,6 @@ public class HandPoseLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(handPoseData))
         {
             parsedHandPoseData = ParsePoseData(handPoseData);
-
-            // Debug: Log parsed data
-            
-            // foreach (var joint in parsedHandPoseData)
-            // {
-            //     //Debug.Log($"{joint.Key}: {joint.Value} (Euler Degrees)");
-            // }
-
-            // Spawn and apply pose
             LoadPose();
         }
         else
@@ -106,6 +98,14 @@ public class HandPoseLoader : MonoBehaviour
         foreach (var joint in poseData)
         {
             string jointName = joint.Key;
+            
+            // ✅ Ignore Wrist Rotation
+            if (jointName.EndsWith("_Wrist")) 
+            {
+                Debug.Log($"Ignoring wrist rotation for {jointName}");
+                continue;
+            }
+
             Vector3 rotationEuler = joint.Value; // Rotation already in degrees
 
             if (jointName.StartsWith("L_") && leftHandJoints.ContainsKey(jointName))
