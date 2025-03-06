@@ -1,10 +1,10 @@
 # ninja log v5
-1	529	1738674481482029799	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a9bb8cc04b4251a9
-0	538	1738674481492293950	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8e30c8631cac9a73
-2	538	1738674481491780912	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	2d7300deacc6a1e1
-2	540	1738674481493583027	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bf47007c741b3b8c
-1	594	1738674481547952142	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	fe1d4c24cabc9284
-2	605	1738674481559024414	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	20fb9cb74cb413c1
-1	684	1738674481638941847	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d0ef003fb42f594b
-0	791	1738674481745150342	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	cee345dd27f165ab
-791	886	1738674481837009500	/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n5j3732/obj/arm64-v8a/libgame.so	92e95c86541af99b
+1	538	1739785068336156247	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	557ce47de925731
+1	545	1739785068346207413	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	94a72ad45ca24d3b
+0	573	1739785068373086758	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	25b1da62112278ba
+2	573	1739785068374743460	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	4b341cd8e19b749d
+2	599	1739785068399863771	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	c85799c14de7302d
+0	661	1739785068461891801	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	37c2450050675cd3
+1	709	1739785068510794095	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c4688213dd1f446d
+0	827	1739785068628148725	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	cc95abe2c5fba3fc
+827	916	1739785068715489816	/Users/ishankhambhaliya/Developer/UnityProjects/CBSE-Class-7th/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2n5j3732/obj/arm64-v8a/libgame.so	3500e31f2cbb6223

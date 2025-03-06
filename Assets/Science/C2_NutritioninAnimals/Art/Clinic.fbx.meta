@@ -3,7 +3,67 @@ guid: be6598cea1f161848a089c0f698fd532
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cabinet.002.Base Color - 2048px
+    second: {fileID: 2800000, guid: ca6a1cd4faba597458c3fd1cca458049, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: EmTrolly
+    second: {fileID: 2800000, guid: 4e4659cb9a48cd948809f1269619291d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Machine_baked.Base Color - 2048px
+    second: {fileID: 2800000, guid: 3796cc427cc401b4da89a3c367da2f37, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oxigen (2)
+    second: {fileID: 2800000, guid: f80706b58462b4343826e60d7158133a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: OxygenLabels (2)
+    second: {fileID: 2800000, guid: 5d0cbc0037bc95d4e84156ca99e11102, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PLatform_baked.Base Color - 2048px
+    second: {fileID: 2800000, guid: 283247a784caf184bb1669ab54780e38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Stand_baked.Base Color - 2048px
+    second: {fileID: 2800000, guid: ff075e19cd2612c46a723033f1e1fe34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor_baked.Base Color - 2048px
+    second: {fileID: 2800000, guid: 2f8656b802c1d8d428206f48b04efbc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor_baked.Metallic - 1024px
+    second: {fileID: 2800000, guid: 2012544de8f54374181015020f30130c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: image
+    second: {fileID: 2800000, guid: c510eadfd8d9f614b932a0bdceba5cd9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maxresdefault (2)
+    second: {fileID: 2800000, guid: 3f43cb958385fa14983e866454765f94, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: textura-de-puntos-negros-8674
+    second: {fileID: 2800000, guid: ea9b0309759e2544f94f2b84cc08270e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,7 +106,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

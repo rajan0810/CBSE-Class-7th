@@ -23,15 +23,27 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/XR Hands/1.5.0/HandVisualizer/HandVisualizer.unity
     guid: ab7acf0d9677fbe4db51bc36647d4fcb
-  - enabled: 1
+  - enabled: 0
     path: Assets/SceneList/Other/HandAnimationData.unity
     guid: 88a52c72411de4e67858a308a83abecc
+  - enabled: 0
+    path: Assets/Science/C2_NutritioninAnimals/ClinicScene.unity
+    guid: e5eaa92b1a9e1844e8197de419a0320c
+  - enabled: 0
+    path: Assets/HandAnimations/Scena/HandAnimations.unity
+    guid: 8474702c22fed483f8349093ebf88b12
+  - enabled: 0
+    path: Assets/SceneList/Science/Chapter2/C2_NutritioninAnimals.unity
+    guid: cd04b23fdf7bb4e8f8bc3c342ba7d648
+  - enabled: 1
+    path: Assets/HandAnimations/Scena/HandAnimationRig.unity
+    guid: 6a66cb574b321426aafb9b36f18d1065
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9bec1ce6a03ccba4b9a8215241b32e63, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a49cadc1a815591479693b955ccf08c1, type: 2}
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 985fdffee33a5944396199c6b7145dd4, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a9a6963505ddf7f4d886008c6dc86122, type: 2}
   m_UseUCBPForAssetBundles: 0
