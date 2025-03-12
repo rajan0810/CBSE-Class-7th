@@ -10,6 +10,9 @@ TagManager:
   - piece3
   - piece4
   - piece5
+  - Cube1
+  - Cube2
+  - Tooth
   layers:
   - Default
   - TransparentFX

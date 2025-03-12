@@ -11,7 +11,7 @@ public class HandAnimationSaver : MonoBehaviour
     public GameObject rightHandPrefab;
 
     [TextArea(10, 30)]
-    public string fistPoseData; // Rotation data for the fist
+    public string PoseData; // Rotation data for the fist
 
     void Start()
     {
@@ -24,8 +24,8 @@ public class HandAnimationSaver : MonoBehaviour
             AssetDatabase.Refresh();
         }
 
-        CreateAndSaveAnimationClip(animationFolder + "NeutralToFist_L.anim", leftHandPrefab, fistPoseData, true);
-        CreateAndSaveAnimationClip(animationFolder + "NeutralToFist_R.anim", rightHandPrefab, fistPoseData, false);
+        CreateAndSaveAnimationClip(animationFolder + "NeutralToFist_L.anim", leftHandPrefab, PoseData, true);
+        CreateAndSaveAnimationClip(animationFolder + "NeutralToFist_R.anim", rightHandPrefab, PoseData, false);
     }
 
     void CreateAndSaveAnimationClip(string savePath, GameObject handPrefab, string poseData, bool isLeftHand)
