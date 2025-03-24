@@ -9,17 +9,17 @@ public class HandAnimationController : MonoBehaviour
     public Animator leftHandAnimator;
     public Animator rightHandAnimator;
 
-    [Header("Input Actions")]
-    public InputActionReference leftGrip;
-    public InputActionReference rightGrip;
-    public InputActionReference leftTrigger;
-    public InputActionReference rightTrigger;
-    
-    private float leftGripValue = 0f;
-    private float rightGripValue = 0f;
-    private float leftTriggerValue = 0f;
-    private float rightTriggerValue = 0f;
-    
+    // [Header("Input Actions")]
+    // public InputActionReference leftGrip;
+    // public InputActionReference rightGrip;
+    // public InputActionReference leftTrigger;
+    // public InputActionReference rightTrigger;
+    //
+    // private float leftGripValue = 0f;
+    // private float rightGripValue = 0f;
+    // private float leftTriggerValue = 0f;
+    // private float rightTriggerValue = 0f;
+    //
     
     [Header("XR Interactors")]
     public UnityEngine.XR.Interaction.Toolkit.Interactors.NearFarInteractor leftNearFarInteractor;
@@ -30,18 +30,18 @@ public class HandAnimationController : MonoBehaviour
 
     void Start()
     {
-        // // Register input action events
-        leftGrip.action.performed += ctx => leftGripValue = ctx.ReadValue<float>();
-        rightGrip.action.performed += ctx => rightGripValue = ctx.ReadValue<float>();
-        leftTrigger.action.performed += ctx => leftTriggerValue = ctx.ReadValue<float>();
-        rightTrigger.action.performed += ctx => rightTriggerValue = ctx.ReadValue<float>();
-
-        // //Reset the vlaue on relesed
-        leftGrip.action.canceled += ctx => leftGripValue = 0f;
-        rightGrip.action.canceled += ctx => rightGripValue = 0f;
-        leftTrigger.action.canceled += ctx => leftTriggerValue = 0f;
-        rightTrigger.action.canceled += ctx => rightTriggerValue = 0f;
-        
+        // // // Register input action events
+        // leftGrip.action.performed += ctx => leftGripValue = ctx.ReadValue<float>();
+        // rightGrip.action.performed += ctx => rightGripValue = ctx.ReadValue<float>();
+        // leftTrigger.action.performed += ctx => leftTriggerValue = ctx.ReadValue<float>();
+        // rightTrigger.action.performed += ctx => rightTriggerValue = ctx.ReadValue<float>();
+        //
+        // // //Reset the vlaue on relesed
+        // leftGrip.action.canceled += ctx => leftGripValue = 0f;
+        // rightGrip.action.canceled += ctx => rightGripValue = 0f;
+        // leftTrigger.action.canceled += ctx => leftTriggerValue = 0f;
+        // rightTrigger.action.canceled += ctx => rightTriggerValue = 0f;
+        //
         // Subscribe to grab and release events
         leftNearFarInteractor.selectEntered.AddListener(OnLeftGrab);
         leftNearFarInteractor.selectExited.AddListener(OnLeftRelease);
@@ -122,30 +122,30 @@ public class HandAnimationController : MonoBehaviour
         //UpdateUIText($"LT: {leftTriggerValue},LG: {leftGripValue} \n"+$"RT:{rightTriggerValue},RG:{rightGripValue}");
     }
 
-    void UpdateHandAnimation(Animator handAnimator, bool isGripPressed, bool isTriggerPressed, UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabbedObject)
-    {
-        int handState = 0; // Default: Normal Hand
-    
-        if (grabbedObject) 
-        {
-            handState = 3; // Grab Animation
-        }
-        else if (isGripPressed && isTriggerPressed)
-        {
-            handState = 3; // Fist (Both Grip + Trigger)
-        }
-        else if (isTriggerPressed)
-        {
-            handState = 2; // Point (Only Trigger)
-        }
-        else if (!isGripPressed && isTriggerPressed)
-        {
-            handState = 1; // Pinch (Light Trigger Press)
-        }
-    
-        handAnimator.SetInteger("HandState", handState);
-    }
-    
+    // void UpdateHandAnimation(Animator handAnimator, bool isGripPressed, bool isTriggerPressed, UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabbedObject)
+    // {
+    //     int handState = 0; // Default: Normal Hand
+    //
+    //     if (grabbedObject) 
+    //     {
+    //         handState = 3; // Grab Animation
+    //     }
+    //     else if (isGripPressed && isTriggerPressed)
+    //     {
+    //         handState = 3; // Fist (Both Grip + Trigger)
+    //     }
+    //     else if (isTriggerPressed)
+    //     {
+    //         handState = 2; // Point (Only Trigger)
+    //     }
+    //     else if (!isGripPressed && isTriggerPressed)
+    //     {
+    //         handState = 1; // Pinch (Light Trigger Press)
+    //     }
+    //
+    //     handAnimator.SetInteger("HandState", handState);
+    // }
+    //
     void UpdateUIText(string message)
     {
         if (logText)

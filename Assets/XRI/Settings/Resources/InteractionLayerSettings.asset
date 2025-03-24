@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LayerNames:
   - Default
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Oesophagus
+  - Gallbladder
+  - LargeIntestine
+  - Liver
+  - Pancreas
+  - Rectum&anus
+  - SmallIntestine
+  - Stomach
+  - Teeth
   - 
   - 
   - 

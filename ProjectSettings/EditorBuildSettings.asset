@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SceneList/Other/HandAnimationData.unity
     guid: 88a52c72411de4e67858a308a83abecc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Science/C2_NutritioninAnimals/ClinicScene.unity
     guid: e5eaa92b1a9e1844e8197de419a0320c
   - enabled: 0
@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SceneList/Science/Chapter2/C2_NutritioninAnimals.unity
     guid: cd04b23fdf7bb4e8f8bc3c342ba7d648
-  - enabled: 1
+  - enabled: 0
     path: Assets/HandAnimations/Scena/HandAnimationRig.unity
     guid: 6a66cb574b321426aafb9b36f18d1065
   m_configObjects:
